@@ -14,6 +14,12 @@ image: CBW_High-throughput_icon.jpg
 
 -----------------------
 
+# CBW HT-seq Module 5 - Structural Variant Calling   
+
+ 
+by Mathieu Bourgey, _Ph.D_
+
+
 
 ## Table of contents
 1. [Introduction](#introduction)
@@ -111,7 +117,7 @@ The initial structure of your folders should look like this:
 
 ```
 ROOT
-|-- bam/               # fastqs from the center (down sampled)
+|-- bam/               # bam files (down sampled)
     `-- NA12878/             # Child sample directory
     `-- NA12891/             # Father sample directory
     `-- NA12892/             # Mother sample directory
@@ -123,7 +129,7 @@ ROOT
 ### Cheat sheets
 
 * [Unix comand line cheat sheet](http://sites.tufts.edu/cbi/files/2013/01/linux_cheat_sheet.pdf)
-* [comands file of this module](https://github.com/mbourgey/CBW_HTseq_module3/blob/master/scripts/commands.sh)
+* [commands file of this module](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/scripts/commands.sh)
 
 
 
