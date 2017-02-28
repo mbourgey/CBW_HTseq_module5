@@ -56,7 +56,7 @@ The dataset comes from the [Illumina Platinum Genomes Project](http://www.illumi
 
 NA12878 is the child of the trio while NA12891 and NA12892 are her parents.
 
-![Pedigree](https://github.com/mbourgey/CBW_HTseq_module3/blob/master/img/Pedigree.png) 
+![Pedigree](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/Pedigree.png) 
 
 
 For practical reasons we subsampled the reads from the sample because running the whole dataset would take way too much time and resources.
@@ -414,7 +414,7 @@ http://cbwXX.dyndns.info/module6/bam/NA12892_S1.chr20.20X.pairs.posSorted.bam
 
 You should see something like this:
 
-![Deletion](http://bioinformatics-ca.github.io/2016_workshops/ht-seq/img/del1.png)
+![Deletion](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/del1.png)
 
 You can try to configure IGV such that we can more clearly see the alignments that support the SV prediction.
 
