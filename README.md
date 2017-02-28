@@ -387,24 +387,7 @@ bcftools view SVvariants/germline.bcf > SVvariants/germline.vcf
 
 **Do you know how to look at the resulting file?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf3.md)
 
-### File check
 
-At this point you should have the following files:
-
-<pre><code>ubuntu@ip-10-164-192-186:~/workspace/module6$ ls
-bam               NA12878.bcf.csi                    NA12891_S1.chr20.20X.pairs.params
-del.bcf           NA12878.fragment.hist.pdf          NA12892.bcf
-del.bcf.csi       NA12878.geno.bcf                   NA12892.bcf.csi
-delly_call        NA12878.geno.bcf.csi               NA12892.fragment.hist.pdf
-fastq             NA12878_S1.chr20.20X.pairs.histo   NA12892.geno.bcf
-germline.bcf      NA12878_S1.chr20.20X.pairs.params  NA12892.geno.bcf.csi
-germline.bcf.csi  NA12891.bcf                        NA12892_S1.chr20.20X.pairs.histo
-germline.vcf      NA12891.bcf.csi                    NA12892_S1.chr20.20X.pairs.params
-merged.bcf        NA12891.fragment.hist.pdf          pairend_distro.py
-merged.bcf.csi    NA12891.geno.bcf                   reference
-merged.vcf        NA12891.geno.bcf.csi               RunModule6.sh
-NA12878.bcf       NA12891_S1.chr20.20X.pairs.histo
-</code></pre>
 
 ## Setting up IGV for SV visualization
 <a name="IGV"></a>
