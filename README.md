@@ -225,16 +225,16 @@ head -n 10 SVvariants/NA12878_S1.chr20.20X.pairs.histo
 ```
 
 Expected results:
->0   0.0
->1	0.000200461060439
->2	0.000300691590659
->3	0.000300691590659
->4	0.000200461060439
->5	0.000200461060439
->6	0.000300691590659
->7	0.00010023053022
->8	0.00010023053022
->9	0.00010023053022
+>0  &nbsp;&nbsp;&nbsp;&nbsp; 0.0   
+>1  &nbsp;&nbsp;&nbsp;&nbsp; 0.000200461060439   
+>2  &nbsp;&nbsp;&nbsp;&nbsp; 0.000300691590659   
+>3  &nbsp;&nbsp;&nbsp;&nbsp; 0.000300691590659   
+>4  &nbsp;&nbsp;&nbsp;&nbsp; 0.000200461060439   
+>5  &nbsp;&nbsp;&nbsp;&nbsp; 0.000200461060439   
+>6  &nbsp;&nbsp;&nbsp;&nbsp; 0.000300691590659   
+>7  &nbsp;&nbsp;&nbsp;&nbsp; 0.00010023053022   
+>8  &nbsp;&nbsp;&nbsp;&nbsp; 0.00010023053022   
+>9  &nbsp;&nbsp;&nbsp;&nbsp; 0.00010023053022   
 
 
 Let's use R to plot the fragment size distribution. 
