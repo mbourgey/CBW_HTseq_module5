@@ -400,50 +400,44 @@ bcftools view SVvariants/germline.bcf > SVvariants/germline.vcf
 
 Launch IGV and load the merged calls and the germline calls using `File -> Load from URL` using:
 
-<pre><code>http://cbwXX.dyndns.info/module6/merged.vcf
-http://cbwXX.dyndns.info/module6/germline.vcf
-</code></pre>
+
+ * http://cbwXX.dyndns.info/HTseq/Module5/SVvariants/merged.vcf
+ * http://cbwXX.dyndns.info/HTseq/Module5/SVvariants/germline.vcf
+
 
 ***Note:*** Once again you will need to replace `XX` by your student number.
 
-Navigate to the following location to see a deletion:
+Navigate to the following location to see a deletion: `chr20:31,308,410-31,315,294`
 
-<pre><code>chr20:31,308,410-31,315,294
-</code></pre>
 
 Now load the bam files in the same way using:
 
-<pre><code>http://cbwXX.dyndns.info/module6/bam/NA12878_S1.chr20.20X.pairs.posSorted.bam
-http://cbwXX.dyndns.info/module6/bam/NA12891_S1.chr20.20X.pairs.posSorted.bam
-http://cbwXX.dyndns.info/module6/bam/NA12892_S1.chr20.20X.pairs.posSorted.bam
-</code></pre>
+ * http://cbwXX.dyndns.info/HTseq/Module5/bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
+ * http://cbwXX.dyndns.info/HTseq/Module5/bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
+ * http://cbwXX.dyndns.infoHTseq/Module5/bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
+
 
 You should see something like this:
 
-![Deletion](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/del1.png)
+![Deletion](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/deletion.png)
 
 You can try to configure IGV such that we can more clearly see the alignments that support the SV prediction.
 
-*Do you remember how to make sure that the alignments are colored by insert size and orientation?*
+***Note*** - Do you remember how to make sure that the alignments are colored by insert size and orientation?*
  
-
-To further validate that there is a deletion there you can also another track which was generate using the Moleculo long read technology:
-
-<pre><code>http://cbwXX.dyndns.info/module6/bam/NA12878.molelculo.chr20.bam
-</code></pre>
 
 ## Explore the SVs
 <a name="explore"></a>
 
-*Is the variant at chr20:31,310,769-31,312,959 found in each member of the trio?*
+**Is the variant at chr20:31,310,769-31,312,959 found in each member of the trio?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv1.md)
 
-*What are the genotypes for each member of the trio at this locus (e.g., hemizygous, homozygous)?*
+**What are the genotypes for each member of the trio at this locus (e.g., hemizygous, homozygous)?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv2.md) 
 
-*What about the variant at chr20:37,054,372-37,056,562?*
+**What about the variant at chr20:37,054,372-37,056,562?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv3.md)
 
-*Does the evidence in the Moleculo track mimic the evidence in the Illumina track for NA12878?*
+**Does the evidence in the Moleculo track mimic the evidence in the Illumina track for NA12878?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv4.md)
 
-*What about chr20:42,269,896-42,278,072?*
+**What about chr20:42,269,896-42,278,072?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv5.md)
 
 Continue exploring the data!
 
