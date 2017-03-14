@@ -223,6 +223,13 @@ samtools view bam/NA12892/NA12892_S1.chr20.20X.pairs.readSorted.bam \
  > SVvariants/NA12892_S1.chr20.20X.pairs.params
 ```
 
+`-r` specifies the read length
+
+`-X` specifies the number of stdevs from mean to extend
+
+`-N` specfies the number of read to sample"
+
+`-o` specifies the output file
 
 
 Let's take a peak at the first few lines of the histogram file that was produced:
@@ -274,13 +281,7 @@ At this point, you should have the following files:
 
 Let's look at the 3 PDF files : 
 
-open a web browser on your laptop, and navigate to `http://cbwXX.dyndns.info/`, where `XX` is the id of your node. You should be able to find there the directory hierarchy under `~/workspace/` on your node. open ```HTseq/Module5/SVvariants``` folder and open the pdf.
-
-
-
- * NA12878.fragment.hist.pdf
- * NA12891.fragment.hist.pdf
- * NA12892.fragment.hist.pdf
+open a web browser on your laptop, and navigate to `http://cbwXX.dyndns.info/`, where `XX` is the id of your node. You should be able to find there the directory hierarchy under `~/workspace/` on your node. open `HTseq/Module5/SVvariants` folder and open the pdf `fragment.hist.pdf
 
 
 Spend some time thinking about what this plot means for identifying discordant alignments.
@@ -325,7 +326,7 @@ bcftools view SVvariants/NA12878.bcf | less -S
 
 
 
-***Cheat:*** If these commands are taking too long, simply run the command `cp delly_call/* .`
+***Cheat:*** If these commands are taking too long, simply run the command `cp saved_results/SVvariants/NA128*[128].bc* SVvariants/`
 
 **How many variant delly found in each sample ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf1.md)
 
