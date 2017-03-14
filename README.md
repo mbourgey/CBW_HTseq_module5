@@ -386,13 +386,6 @@ bcftools view SVvariants/merged.bcf > SVvariants/merged.vcf
 ```
 
 
-### Apply a filter for germline events
-
-```
-delly filter -t DEL -f germline -o SVvariants/germline.bcf SVvariants/merged.bcf
-bcftools view SVvariants/germline.bcf > SVvariants/germline.vcf
-```
-
 **Do you know how to look at the resulting file?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf3.md)
 
 
@@ -404,7 +397,6 @@ Launch IGV and load the merged calls and the germline calls using `File -> Load 
 
 
  * http://cbwXX.dyndns.info/HTseq/Module5/SVvariants/merged.vcf
- * http://cbwXX.dyndns.info/HTseq/Module5/SVvariants/germline.vcf
 
 
 ***Note:*** Once again you will need to replace `XX` by your student number.
@@ -433,7 +425,7 @@ You can try to configure IGV such that we can more clearly see the alignments th
 
 **Is the variant at chr20:31,310,769-31,312,959 found in each member of the trio?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv1.md)
 
-**What are the genotypes for each member of the trio at this locus (e.g., hemizygous, homozygous)?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv2.md) 
+**What are the genotypes for each member of the trio at the locus chr20:61,721,523-61,728,495  (e.g., hemizygous, homozygous)?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv2.md) 
 
 **What about the variant at chr20:37,054,372-37,056,562?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv3.md)
 
