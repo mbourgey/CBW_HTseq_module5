@@ -23,12 +23,12 @@ by Mathieu Bourgey, _Ph.D_
 
 ## Table of contents
 1. [Introduction](#introduction)
+2. [Original Setup](#setup)
 2. [Align DNA with BWA-MEM](#align)
 3. [Characterize the fragment size distribution](#fragments)
 4. [Run DELLY to detect SVs](#delly)
 5. [Setting up IGV for SV visualization](#IGV)
 6. [Explore the SVs](#explore)
-7. [Overall script](#script)
 8. [(Optional) Look for other SVs](#otherSV)
 9. [Acknowledgements](#ackno)
 
@@ -69,6 +69,7 @@ For practical reasons we subsampled the reads from the sample because running th
 We're going to focus on the reads extracted from the chromosome 20.
 
 ## Original Setup
+<a name="setup"></a>
 
 ### Amazon node
 
@@ -133,7 +134,7 @@ ROOT
 
 
 
-##  Align DNA with BWA-MEM
+## Align DNA with BWA-MEM
 <a name="align"></a>
 
 This step has been done for you in the interest of time, but the commands are shown so that you can reproduce the results later. The advantage of using BWA-MEM in the context of SV discovery is that it produces both paired-end and split-read alignments in a single BAM output file. In contrast, prior to BWA-MEM, one typically had to use two different aligners in order to produce both high quality paired-end and split-read alignments.
