@@ -427,11 +427,15 @@ You can try to configure IGV such that we can more clearly see the alignments th
 
 **What are the genotypes for each member of the trio at the locus chr20:61,721,523-61,728,495  (e.g., hemizygous, homozygous)?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv2.md) 
 
-**What about the variant at chr20:37,054,372-37,056,562?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv3.md)
+**What about the variant at chr20:52,632,182-52,664,108?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv3.md)
+
+Now load the bam files in 
+
+ * http://cbwXX.dyndns.info/HTseq/Module5/saved_results/Moleculo_bam/NA12878.molelculo.chr20.bam
 
 **Does the evidence in the Moleculo track mimic the evidence in the Illumina track for NA12878?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv4.md)
 
-**What about chr20:42,269,896-42,278,072?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv5.md)
+**What about chr20:18,953,476-18,957,998?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv5.md)
 
 Continue exploring the data!
 
