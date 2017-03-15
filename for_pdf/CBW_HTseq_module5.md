@@ -1,43 +1,23 @@
----
-layout: post2
-permalink: /informatics_for_high-throughput_data_sequencing_2017_module5_lab/
-title: Informatics for High-Throughput Sequencing Data 2017 Module 5 lab
-header1: Informatics for High-Throughput Sequencing Data 2017
-header2: Module 7 lab
-image: CBW_High-throughput_icon.jpg
----
-
-
------------------------
 
 **This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US). This means that you are able to copy, share and modify the work, as long as the result is distributed under the same license.**
 
------------------------
-
+ 
+  
+  
+  
+  
 # CBW HT-seq Module 5 - Structural Variant Calling   
 
  
+ 
+
 by Mathieu Bourgey, _Ph.D_
 
 
-
-## Table of contents
-1. [Introduction](#introduction)
-2. [Original Setup](#setup)
-2. [Align DNA with BWA-MEM](#align)
-3. [Characterize the fragment size distribution](#fragments)
-4. [Run DELLY to detect SVs](#delly)
-5. [Setting up IGV for SV visualization](#IGV)
-6. [Explore the SVs](#explore)
-8. [(Optional) Look for other SVs](#otherSV)
-9. [Acknowledgements](#ackno)
-
-
-
+\pagebreak
 
 
 ## Introduction
-<a name="introduction"></a>
 
 The goal of this practical session is to identify structural variants (SVs) in a human genome by identifying both discordant paired-end alignments and split-read alignments that. 
 
@@ -56,14 +36,17 @@ The dataset comes from the [Illumina Platinum Genomes Project](http://www.illumi
 
 NA12878 is the child of the trio while NA12891 and NA12892 are her parents.
 
-![Pedigree](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/Pedigree.png) 
+![Pedigree](Pedigree.png) 
 
 
 For practical reasons we subsampled the reads from the sample because running the whole dataset would take way too much time and resources.
 We're going to focus on the reads extracted from the chromosome 20.
 
+
+\pagebreak
+
 ## Original Setup
-<a name="setup"></a>
+
 
 ### Amazon node
 
@@ -85,6 +68,7 @@ These are all already installed, but here are the original links.
 In this session, we will particularly focus on DELLY, a SV detection tool. DELLY is an integrated structural variant prediction method that can discover, genotype and visualize deletions, tandem duplications, inversions and translocations at single-nucleotide resolution in short-read massively parallel sequencing data. It uses paired-ends and split-reads to sensitively and accurately delineate genomic rearrangements throughout the genome. 
 
 If you are interested in DELLY, you can read the full manuscript [here](http://bioinformatics.oxfordjournals.org/content/28/18/i333.abstract).
+
 
 ### Environment setup
 
@@ -129,7 +113,6 @@ ROOT
 
 
 ## Align DNA with BWA-MEM
-<a name="align"></a>
 
 This step has been done for you in the interest of time, but the commands are shown so that you can reproduce the results later. The advantage of using BWA-MEM in the context of SV discovery is that it produces both paired-end and split-read alignments in a single BAM output file. In contrast, prior to BWA-MEM, one typically had to use two different aligners in order to produce both high quality paired-end and split-read alignments.
 
@@ -169,17 +152,36 @@ In the alignment commands, note the use of the -M parameter to mark shorter spli
 ```
 
 
-**Why should mark shorter split hits as secondary ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_aln1.md)
+**Why should mark shorter split hits as secondary ?** 
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
+
 
 
 ## Characterize the fragment size distribution
-<a name="fragments"></a>
 
 Before we can attempt to identify structural variants via discordant alignments, we must first characterize the insert size distribution 
 
-**What means the insert size distribution ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_fragment1.md)
+**What means the insert size distribution ?** 
 
-**How can we use the fragment size distribution in SV detection ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_fragment2.md)
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
+
+
+
+**How can we use the fragment size distribution in SV detection ?** 
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
+
+
 
 
 The following script, taken from LUMPY extracts F/R pairs from a BAM file and computes the mean and stdev of the F/R alignments. It also generates a density plot of the fragment size distribution.
@@ -280,7 +282,13 @@ open a web browser on your laptop, and navigate to `http://cbwXX.dyndns.info/`, 
 
 Spend some time thinking about what this plot means for identifying discordant alignments.
 
-**What does the mean fragment size appear to be? Are all 3 graphs the same?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_insert1.md)
+**What does the mean fragment size appear to be? Are all 3 graphs the same?** 
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
+
 
 
 ## SV detection
@@ -322,7 +330,13 @@ bcftools view SVvariants/NA12878.bcf | less -S
 
 ***Cheat:*** If these commands are taking too long, simply run the command `cp saved_results/SVvariants/NA128*[128].bc* SVvariants/`
 
-**How many variant delly found in each sample ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf1.md)
+**How many variant delly found in each sample ?** 
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
+
 
 ### Merge calls
 
@@ -339,7 +353,12 @@ Look at the output:
 bcftools view SVvariants/del.bcf | less -S
 ```
 
-**What can you notice different from the individual bcf ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf2.md)
+**What can you notice different from the individual bcf ?** 
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
 
 
 ### Re-genotype in all samples
@@ -348,15 +367,18 @@ We need to re-genotype the merged SV site list across all samples. This can be r
 
 ```
 #NA12878
-delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12878.geno.bcf \
+delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf \ 
+  -o SVvariants/NA12878.geno.bcf \
   -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12891
-delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12891.geno.bcf \
+delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf \ 
+  -o SVvariants/NA12891.geno.bcf \
   -x $REF/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12892
-delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12892.geno.bcf \
+delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf \ 
+  -o SVvariants/NA12892.geno.bcf \
   -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
 ```
 
@@ -374,18 +396,26 @@ We now have our good candidate list genotype for each individual.
 Merge all re-genotyped samples to get a single VCF/BCF using bcftools merge. Also index the resulting file and create vcf file for visualization.
 
 ```
-bcftools merge -O b -o SVvariants/merged.bcf SVvariants/NA12878.geno.bcf SVvariants/NA12891.geno.bcf SVvariants/NA12892.geno.bcf
+bcftools merge -O b -o SVvariants/merged.bcf \ 
+  SVvariants/NA12878.geno.bcf \ 
+  SVvariants/NA12891.geno.bcf \ 
+  SVvariants/NA12892.geno.bcf
 bcftools index SVvariants/merged.bcf
 bcftools view SVvariants/merged.bcf > SVvariants/merged.vcf
 ```
 
 
-**Do you know how to look at the resulting file?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf3.md)
+**Do you know how to look at the resulting file?** 
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
 
 
 
 ## Setting up IGV for SV visualization
-<a name="IGV"></a>
+
 
 Launch IGV and load the merged calls and the germline calls using `File -> Load from URL` using:
 
@@ -407,7 +437,7 @@ Now load the bam files in the same way using:
 
 You should see something like this:
 
-![Deletion](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/deletion.png)
+![Deletion](deletion.png)
 
 You can try to configure IGV such that we can more clearly see the alignments that support the SV prediction.
 
@@ -415,28 +445,53 @@ You can try to configure IGV such that we can more clearly see the alignments th
  
 
 ## Explore the SVs
-<a name="explore"></a>
 
-**Is the variant at chr20:31,310,769-31,312,959 found in each member of the trio?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv1.md)
 
-**What are the genotypes for each member of the trio at the locus chr20:61,721,523-61,728,495  (e.g., hemizygous, homozygous)?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv2.md) 
+**Is the variant at chr20:31,310,769-31,312,959 found in each member of the trio?** 
 
-**What about the variant at chr20:52,632,182-52,664,108?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv3.md)
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
+
+
+**What are the genotypes for each member of the trio at the locus chr20:61,721,523-61,728,495  (e.g., hemizygous, homozygous)?**
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
+
+**What about the variant at chr20:52,632,182-52,664,108?** 
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
 
 Now load the bam files in 
 
  * http://cbwXX.dyndns.info/HTseq/Module5/saved_results/Moleculo_bam/NA12878.molelculo.chr20.bam
 
-**Does the evidence in the Moleculo track mimic the evidence in the Illumina track for NA12878?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv4.md)
+**Does the evidence in the Moleculo track mimic the evidence in the Illumina track for NA12878?** 
 
-**What about chr20:18,953,476-18,957,998?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv5.md)
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
+
+**What about chr20:18,953,476-18,957,998?** 
+
+_____________________________________________________________
+_____________________________________________________________ _____________________________________________________________
+_____________________________________________________________
+
 
 Continue exploring the data!
 
 
 
 ## (Optional) Look for other SVs
-<a name="otherSV"></a>
 
 You can try using Delly to look for other types of SVs, for example using:
 
