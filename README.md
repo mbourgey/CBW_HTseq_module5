@@ -1,10 +1,11 @@
 ---
-layout: post2
-permalink: /informatics_for_high-throughput_data_sequencing_2017_module5_lab/
-title: Informatics for High-Throughput Sequencing Data 2017 Module 5 lab
-header1: Informatics for High-Throughput Sequencing Data 2017
-header2: Module 7 lab
-image: CBW_High-throughput_icon.jpg
+layout: tutorial_page
+permalink: /high-throughput_biology_2017_module5_lab
+title: HT-Biology Lab 5
+header1: Workshop Pages for Students
+header2: High-Throughput Biology - From Sequence to Networks Module 5 Lab
+image: /site_images/CBW-CSHL-graphic-square.png
+home: https://bioinformaticsdotca.github.io/high-throughput_biology_2017
 ---
 
 
