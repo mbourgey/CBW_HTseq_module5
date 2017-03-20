@@ -57,7 +57,7 @@ The dataset comes from the [Illumina Platinum Genomes Project](http://www.illumi
 
 NA12878 is the child of the trio while NA12891 and NA12892 are her parents.
 
-![Pedigree](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/Pedigree.png) 
+<img src="https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/Pedigree.png" alt="Pedigree" width="750" />  
 
 
 For practical reasons we subsampled the reads from the sample because running the whole dataset would take way too much time and resources.
@@ -68,7 +68,7 @@ We're going to focus on the reads extracted from the chromosome 20.
 
 ### Amazon node
 
-Read these [directions] (http://bioinformatics-ca.github.io/logging_into_the_Amazon_cloud/) for information on how to log in to your assigned Amazon node. 
+Read these [directions](http://bioinformaticsdotca.github.io/AWS_setup) for information on how to log in to your assigned Amazon node. 
 
 ### Software requirements
 
@@ -408,7 +408,7 @@ Now load the bam files in the same way using:
 
 You should see something like this:
 
-![Deletion](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/deletion.png)
+<img src="https://github.com/mbourgey/CBW_HTseq_module5/blob/master/img/deletion.png" alt="Deletion" width="750" /> 
 
 You can try to configure IGV such that we can more clearly see the alignments that support the SV prediction.
 
