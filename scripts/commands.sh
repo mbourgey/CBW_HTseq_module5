@@ -9,43 +9,7 @@ mkdir -p $WORK_DIR/SVvariants
 cd $WORK_DIR
 ln -s ~/CourseData/HT_data/Module5/* .
 
-ROOT
-|-- bam/               # bam files (down sampled)
-    `-- NA12878/             # Child sample directory
-    `-- NA12891/             # Father sample directory
-    `-- NA12892/             # Mother sample directory
-`-- reference/               # hg19 reference and indexes
-`-- scripts/                 # command lines scripts
-`-- saved_results/           # precomputed final files
-#################
-#Align NA12878 #
-#################
-#bwa mem $REF/hg19.fa \
-#fastq/NA12878_S1.chr20.20X.1.fq \
-#fastq/NA12878_S1.chr20.20X.2.fq \
-#-M -t 2| samtools view -S -b - \
-#> bam/NA12878/NA12878_S1.chr20.20X.pairs.readSorted.bam
 
-
-#################
-#Align NA12891 #
-#################
-#bwa mem hg19.fa \
-#fastq/NA12891_S1.chr20.20X.1.fq \
-#fastq/NA12891_S1.chr20.20X.2.fq \
-#-M -t 2 | samtools view -S -b - \
-#> bam/NA12891/NA12891_S1.chr20.20X.pairs.readSorted.bam
-
-
-#################
-#Align NA12892 #
-#################
-#bwa mem hg19.fa \
-#fastq/NA12892_S1.chr20.20X.1.fq \
-#fastq/NA12892_S1.chr20.20X.2.fq \
-#-M -t 2 | samtools view -S -b - \
-#> bam/NA1289/NA12892_S1.chr20.20X.pairs.readSorted.bam
-#NA12878
 samtools view bam/NA12878/NA12878_S1.chr20.20X.pairs.readSorted.bam \
      | python scripts/pairend_distro.py \
      -r 101 \
@@ -73,7 +37,10 @@ samtools view bam/NA12892/NA12892_S1.chr20.20X.pairs.readSorted.bam \
      -N 10000 \
      -o SVvariants/NA12892_S1.chr20.20X.pairs.histo \
  > SVvariants/NA12892_S1.chr20.20X.pairs.params
+ 
+
 head -n 10 SVvariants/NA12878_S1.chr20.20X.pairs.histo
+
 R
 size_dist <- read.table('SVvariants/NA12878_S1.chr20.20X.pairs.histo')
 pdf(file = "SVvariants/fragment.hist.pdf") 
@@ -97,10 +64,14 @@ delly call -t DEL -g $REF/hg19.fa -o SVvariants/NA12891.bcf -x $REF/hg19.excl \
 #NA12892
 delly call -t DEL -g $REF/hg19.fa -o SVvariants/NA12892.bcf -x $REF/hg19.excl \
   bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
-bcftools view SVvariants/NA12878.bcf | less -S
+  
+#bcftools view SVvariants/NA12878.bcf | less -S
+
 delly merge -t DEL -m 500 -n 1000000 -o SVvariants/del.bcf -b 500 -r 0.5 \
   SVvariants/NA12878.bcf SVvariants/NA12891.bcf SVvariants/NA12892.bcf
-bcftools view SVvariants/del.bcf | less -S
+
+#bcftools view SVvariants/del.bcf | less -S
+
 #NA12878
 delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12878.geno.bcf \
   -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
@@ -112,7 +83,11 @@ delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12891.ge
 #NA12892
 delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12892.geno.bcf \
   -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
-bcftools view SVvariants/NA12878.geno.bcf | less -S
+
+#bcftools view SVvariants/NA12878.geno.bcf | less -S
+
 bcftools merge -O b -o SVvariants/merged.bcf SVvariants/NA12878.geno.bcf SVvariants/NA12891.geno.bcf SVvariants/NA12892.geno.bcf
 bcftools index SVvariants/merged.bcf
 bcftools view SVvariants/merged.bcf > SVvariants/merged.vcf
+
+
