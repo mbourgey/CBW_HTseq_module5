@@ -29,8 +29,7 @@ by Mathieu Bourgey, _Ph.D_
 4. [Run DELLY to detect SVs](#delly)
 5. [Setting up IGV for SV visualization](#IGV)
 6. [Explore the SVs](#explore)
-8. [(Optional) Look for other SVs](#otherSV)
-9. [Acknowledgements](#ackno)
+7. [Acknowledgements](#ackno)
 
 
 
@@ -298,16 +297,13 @@ Let's call deletions:
 
 ```
 #NA12878
-delly call -t DEL -g $REF/hg19.fa -o SVvariants/NA12878.bcf -x $REF/hg19.excl \
-  bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -o SVvariants/NA12878.bcf -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12891
-delly call -t DEL -g $REF/hg19.fa -o SVvariants/NA12891.bcf -x $REF/hg19.excl \
-  bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -o SVvariants/NA12891.bcf -x $REF/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12892
-delly call -t DEL -g $REF/hg19.fa -o SVvariants/NA12892.bcf -x $REF/hg19.excl \
-  bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -o SVvariants/NA12892.bcf -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
 ```
 
 
@@ -329,8 +325,7 @@ bcftools view SVvariants/NA12878.bcf | less -S
 We need to merge the SV sites into a unified site list:
 
 ```
-delly merge -t DEL -m 500 -n 1000000 -o SVvariants/del.bcf -b 500 -r 0.5 \
-  SVvariants/NA12878.bcf SVvariants/NA12891.bcf SVvariants/NA12892.bcf
+delly merge -m 500 -n 1000000 -o SVvariants/del.bcf -b 500 -r 0.5 SVvariants/NA12878.bcf SVvariants/NA12891.bcf SVvariants/NA12892.bcf
 ```
 
 Look at the output:
@@ -348,16 +343,13 @@ We need to re-genotype the merged SV site list across all samples. This can be r
 
 ```
 #NA12878
-delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12878.geno.bcf \
-  -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12878.geno.bcf -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12891
-delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12891.geno.bcf \
-  -x $REF/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12891.geno.bcf -x $REF/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12892
-delly call -t DEL -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12892.geno.bcf \
-  -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12892.geno.bcf -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
 ```
 
 Look at the output:
@@ -433,18 +425,6 @@ Now load the bam files in
 
 Continue exploring the data!
 
-
-
-## (Optional) Look for other SVs
-<a name="otherSV"></a>
-
-You can try using Delly to look for other types of SVs, for example using:
-
-`delly -t DUP`
-
-`delly -t INV`
-
-`delly -t TRA`
 
 
 ## Acknowledgements
