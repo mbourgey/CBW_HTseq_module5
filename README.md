@@ -1,11 +1,11 @@
 ---
 layout: tutorial_page
-permalink: /htseq_2017_module5_lab
+permalink: /htseq_2018_module5_lab
 title: HTSeq Lab 5
 header1: Workshop Pages for Students
 header2: Informatics on High-Throughput Sequencing Data Module 5 Lab
 image: /site_images/CBW_High-throughput_icon.jpg
-home: https://bioinformaticsdotca.github.io/htseq_2017
+home: https://bioinformaticsdotca.github.io/htseq_2018
 ---
 
 -----------------------
@@ -287,13 +287,13 @@ Spend some time thinking about what this plot means for identifying discordant a
 
 For germline SVs, calling is done by sample or in small batches to increase SV sensitivity & breakpoint precision. 
 
-At this point we will only call ***deletions***. Here are the steps adapted from the DELLY [readme](https://github.com/tobiasrausch/delly/blob/master/README.md).
+Here are the steps adapted from the DELLY [readme](https://github.com/tobiasrausch/delly/blob/master/README.md).
 
 
 
 ### First call
 
-Let's call deletions:
+Let's call SVs:
 
 ```
 #NA12878
@@ -318,21 +318,25 @@ bcftools view SVvariants/NA12878.bcf | less -S
 
 ***Cheat:*** If these commands are taking too long, simply run the command `cp saved_results/SVvariants/NA128*[128].bc* SVvariants/`
 
-**How many variant delly found in each sample ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf1.md)
+**How many variants delly found in each sample ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf1.md)
+
+**How many variants by SV type are found in each sample ?** 
 
 ### Merge calls
 
 We need to merge the SV sites into a unified site list:
 
 ```
-delly merge -m 500 -n 1000000 -o SVvariants/del.bcf -b 500 -r 0.5 SVvariants/NA12878.bcf SVvariants/NA12891.bcf SVvariants/NA12892.bcf
+delly merge -m 500 -n 1000000 -o SVvariants/sv.bcf -b 500 -r 0.5 SVvariants/NA12878.bcf SVvariants/NA12891.bcf SVvariants/NA12892.bcf
 ```
 
 Look at the output:
 
 ```
-bcftools view SVvariants/del.bcf | less -S
+bcftools view SVvariants/sv.bcf | less -S
 ```
+
+**How many variants by SV type are found ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf4.md)
 
 **What can you notice different from the individual bcf ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf2.md)
 
@@ -343,13 +347,13 @@ We need to re-genotype the merged SV site list across all samples. This can be r
 
 ```
 #NA12878
-delly call -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12878.geno.bcf -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12878.geno.bcf -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12891
-delly call -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12891.geno.bcf -x $REF/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12891.geno.bcf -x $REF/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12892
-delly call -g $REF/hg19.fa -v SVvariants/del.bcf -o SVvariants/NA12892.geno.bcf -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
+delly call -g $REF/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12892.geno.bcf -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
 ```
 
 Look at the output:
