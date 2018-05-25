@@ -274,7 +274,7 @@ At this point, you should have the following files:
 
 Let's look at the 3 PDF files : 
 
-open a web browser on your laptop, and navigate to `http://cbwXX.dyndns.info/`, where `XX` is the id of your node. You should be able to find there the directory hierarchy under `~/workspace/` on your node. open `HTseq/Module5/SVvariants` folder and open the pdf `fragment.hist.pdf
+open a web browser on your laptop, and navigate to `http://XX.oicrcbw.ca`, where `XX` is the id of your node. You should be able to find there the directory hierarchy under `~/workspace/` on your node. open `HTseq/Module5/SVvariants` folder and open the pdf `fragment.hist.pdf
 
 
 Spend some time thinking about what this plot means for identifying discordant alignments.
