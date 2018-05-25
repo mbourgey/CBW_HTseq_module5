@@ -274,7 +274,7 @@ At this point, you should have the following files:
 
 Let's look at the 3 PDF files : 
 
-open a web browser on your laptop, and navigate to `http://cbwXX.dyndns.info/`, where `XX` is the id of your node. You should be able to find there the directory hierarchy under `~/workspace/` on your node. open `HTseq/Module5/SVvariants` folder and open the pdf `fragment.hist.pdf
+open a web browser on your laptop, and navigate to `http://XX.oicrcbw.ca`, where `XX` is the id of your node. You should be able to find there the directory hierarchy under `~/workspace/` on your node. open `HTseq/Module5/SVvariants` folder and open the pdf `fragment.hist.pdf`
 
 
 Spend some time thinking about what this plot means for identifying discordant alignments.
@@ -386,7 +386,7 @@ bcftools view SVvariants/merged.bcf > SVvariants/merged.vcf
 Launch IGV and load the merged calls and the germline calls using `File -> Load from URL` using:
 
 
- * http://cbwXX.dyndns.info/HTseq/Module5/SVvariants/merged.vcf
+ * http://XX.oicrcbw.ca/HTseq/Module5/SVvariants/merged.vcf
 
 
 ***Note:*** Once again you will need to replace `XX` by your student number.
@@ -396,9 +396,9 @@ Navigate to the following location to see a deletion: `chr20:31,308,410-31,315,2
 
 Now load the bam files in the same way using:
 
- * http://cbwXX.dyndns.info/HTseq/Module5/bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
- * http://cbwXX.dyndns.info/HTseq/Module5/bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
- * http://cbwXX.dyndns.infoHTseq/Module5/bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
+ * http://XX.oicrcbw.ca/HTseq/Module5/bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
+ * http://XX.oicrcbw.ca/HTseq/Module5/bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
+ * http://XX.oicrcbw.ca/HTseq/Module5/bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
 
 
 You should see something like this:
@@ -421,7 +421,7 @@ You can try to configure IGV such that we can more clearly see the alignments th
 
 Now load the bam files in 
 
- * http://cbwXX.dyndns.info/HTseq/Module5/saved_results/Moleculo_bam/NA12878.molelculo.chr20.bam
+ * http://XX.oicrcbw.ca/HTseq/Module5/saved_results/Moleculo_bam/NA12878.molelculo.chr20.bam
 
 **Does the evidence in the Moleculo track mimic the evidence in the Illumina track for NA12878?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_igv4.md)
 
