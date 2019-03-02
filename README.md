@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /htseq_2018_module5_lab
+permalink: /htseq_2019_module5_lab
 title: HTSeq Lab 5
 header1: Workshop Pages for Students
 header2: Informatics on High-Throughput Sequencing Data Module 5 Lab
@@ -89,7 +89,6 @@ If you are interested in DELLY, you can read the full manuscript [here](http://b
 
 ```
 #set up
-export SOFT_DIR=/usr/local/
 export WORK_DIR=~/workspace/HTseq/Module5/
 export REF=$WORK_DIR/reference
 

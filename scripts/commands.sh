@@ -1,5 +1,4 @@
 #set up
-export SOFT_DIR=/usr/local/
 export WORK_DIR=~/workspace/HTseq/Module5/
 export REF=$WORK_DIR/reference
 
