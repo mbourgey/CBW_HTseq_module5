@@ -337,7 +337,7 @@ bcftools view SVvariants/sv.bcf | less -S
 
 **How many variants by SV type are found ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf5.md)
 
-**What can you notice different from the individual bcf ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf2.md)
+**What can you notice something different from the individual bcf ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf2.md)
 
 
 ### Re-genotype in all samples
