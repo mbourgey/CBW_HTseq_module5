@@ -167,7 +167,7 @@ In the alignment commands, note the use of the -M parameter to mark shorter spli
 ```
 
 
-**Why should mark shorter split hits as secondary ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_aln1.md)
+**Why should we mark shorter split hits as secondary ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_aln1.md)
 
 
 ## Characterize the fragment size distribution
@@ -319,7 +319,7 @@ bcftools view SVvariants/NA12878.bcf | less -S
 
 **How many variants delly found in each sample ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf1.md)
 
-**How many variants by SV type are found in each sample ?** 
+**How many variants by SV type are found in each sample ?** [solution](https://github.com/mbourgey/CBW_HTseq_module5/blob/master/solutions/_vcf4.md)
 
 ### Merge calls
 
