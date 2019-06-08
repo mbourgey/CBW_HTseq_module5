@@ -186,6 +186,7 @@ Let's calculate the fragment distribution for the three dataset:
 
 ```
 #NA12878
+mkdir -p SVvariants
 samtools view bam/NA12878/NA12878_S1.chr20.20X.pairs.readSorted.bam \
      | python scripts/pairend_distro.py \
      -r 101 \
