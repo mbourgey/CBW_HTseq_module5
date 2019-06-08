@@ -139,7 +139,7 @@ In the alignment commands, note the use of the -M parameter to mark shorter spli
 #################
 #Align NA12878 #
 #################
-#bwa mem $REF/hg19.fa \
+#bwa mem reference/hg19.fa \
 #fastq/NA12878_S1.chr20.20X.1.fq \
 #fastq/NA12878_S1.chr20.20X.2.fq \
 #-M -t 2| samtools view -S -b - \
@@ -149,7 +149,7 @@ In the alignment commands, note the use of the -M parameter to mark shorter spli
 #################
 #Align NA12891 #
 #################
-#bwa mem hg19.fa \
+#bwa mem reference/hg19.fa \
 #fastq/NA12891_S1.chr20.20X.1.fq \
 #fastq/NA12891_S1.chr20.20X.2.fq \
 #-M -t 2 | samtools view -S -b - \
@@ -159,7 +159,7 @@ In the alignment commands, note the use of the -M parameter to mark shorter spli
 #################
 #Align NA12892 #
 #################
-#bwa mem hg19.fa \
+#bwa mem reference/hg19.fa \
 #fastq/NA12892_S1.chr20.20X.1.fq \
 #fastq/NA12892_S1.chr20.20X.2.fq \
 #-M -t 2 | samtools view -S -b - \
@@ -297,13 +297,13 @@ Let's call SVs:
 
 ```
 #NA12878
-delly call -g $REF/hg19.fa -o SVvariants/NA12878.bcf -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
+delly call -g reference/hg19.fa -o SVvariants/NA12878.bcf -x reference/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12891
-delly call -g $REF/hg19.fa -o SVvariants/NA12891.bcf -x $REF/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
+delly call -g reference/hg19.fa -o SVvariants/NA12891.bcf -x reference/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12892
-delly call -g $REF/hg19.fa -o SVvariants/NA12892.bcf -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
+delly call -g reference/hg19.fa -o SVvariants/NA12892.bcf -x reference/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
 ```
 
 
@@ -347,13 +347,13 @@ We need to re-genotype the merged SV site list across all samples. This can be r
 
 ```
 #NA12878
-delly call -g $REF/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12878.geno.bcf -x $REF/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
+delly call -g reference/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12878.geno.bcf -x reference/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12891
-delly call -g $REF/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12891.geno.bcf -x $REF/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
+delly call -g reference/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12891.geno.bcf -x reference/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12892
-delly call -g $REF/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12892.geno.bcf -x $REF/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
+delly call -g reference/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12892.geno.bcf -x reference/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
 ```
 
 Look at the output:
