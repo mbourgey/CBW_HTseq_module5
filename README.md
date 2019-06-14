@@ -89,12 +89,15 @@ If you are interested in DELLY, you can read the full manuscript [here](http://b
 
 ```
 #set up
-export WORK_DIR=~/workspace/HTseq/Module5/
+export WORK_DIR_M5=$HOME/workspace/HTseq/Module5/
+export REF=$HOME/workspace/HTseq/Module5/reference
+mkdir -p $WORK_DIR_M5
+cd $WORK_DIR_M5
+ln -s $HOME/CourseData/HT_data/Module5/* .
 
-rm -rf $WORK_DIR
-mkdir -p $WORK_DIR/variants
-cd $WORK_DIR
-ln -s ../../../HT_data_2018/Module5/* .
+
+docker run --privileged -v /tmp:/tmp --network host -it -w $PWD -v $HOME:$HOME -v /media:/media --user $UID:$GROUPS -v /etc/group:/etc/group -v /etc/passwd:/etc/passwd c3genomics/genpipes:0.8
+
 
 module load mugqic/Delly/0.7.8
 
