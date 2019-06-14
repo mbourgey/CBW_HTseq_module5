@@ -16,8 +16,7 @@ home: https://bioinformaticsdotca.github.io/htseq_2019
 
 # CBW HT-seq Module 5 - Structural Variant Calling   
 
- 
-by Mathieu Bourgey, _Ph.D_
+ Created by Mathieu Bourgey, _Ph.D_, then modified by Pascale Marquis
 
 
 
