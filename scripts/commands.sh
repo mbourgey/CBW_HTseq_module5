@@ -1,12 +1,12 @@
 #set up
-export WORK_DIR=~/workspace/HTseq/Module5/
-export REF=$WORK_DIR/reference
 
 
-rm -rf $WORK_DIR
-mkdir -p $WORK_DIR/SVvariants
-cd $WORK_DIR
-ln -s ~/CourseData/HT_data/Module5/* .
+docker run --privileged -v /tmp:/tmp --network host -it -w $PWD -v $HOME:$HOME -v /media:/media --user $UID:$GROUPS -v /etc/group:/etc/group -v /etc/passwd:/etc/passwd c3genomics/genpipes:0.8
+export WORK_DIR_M5=$HOME/workspace/HTseq/Module5/
+export REF=$HOME/workspace/HTseq/Module5/reference
+mkdir -p $WORK_DIR_M5
+cd $WORK_DIR_M5
+ln -s $HOME/CourseData/HT_data/Module5/* .
 
 
 samtools view bam/NA12878/NA12878_S1.chr20.20X.pairs.readSorted.bam \
@@ -81,5 +81,7 @@ delly call -g $REF/hg19.fa -v SVvariants/sv.bcf -o SVvariants/NA12892.geno.bcf -
 bcftools merge -O b -o SVvariants/merged.bcf SVvariants/NA12878.geno.bcf SVvariants/NA12891.geno.bcf SVvariants/NA12892.geno.bcf
 bcftools index SVvariants/merged.bcf
 bcftools view SVvariants/merged.bcf > SVvariants/merged.vcf
+bgzip -c SVvariants/merged.vcf > SVvariants/merged.vcf.gz
+tabix -fp vcf SVvariants/merged.vcf.gz
 
 
