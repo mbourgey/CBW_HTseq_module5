@@ -88,6 +88,9 @@ If you are interested in DELLY, you can read the full manuscript [here](http://b
 
 ```
 #set up
+
+
+docker run --privileged -v /tmp:/tmp --network host -it -w $PWD -v $HOME:$HOME -v /media:/media --user $UID:$GROUPS -v /etc/group:/etc/group -v /etc/passwd:/etc/passwd c3genomics/genpipes:0.8
 export WORK_DIR_M5=$HOME/workspace/HTseq/Module5/
 export REF=$HOME/workspace/HTseq/Module5/reference
 mkdir -p $WORK_DIR_M5
@@ -95,10 +98,7 @@ cd $WORK_DIR_M5
 ln -s $HOME/CourseData/HT_data/Module5/* .
 
 
-docker run --privileged -v /tmp:/tmp --network host -it -w $PWD -v $HOME:$HOME -v /media:/media --user $UID:$GROUPS -v /etc/group:/etc/group -v /etc/passwd:/etc/passwd c3genomics/genpipes:0.8
-
-
-module load mugqic/java/openjdk-jdk1.8.0_72 mugqic/bvatools/1.6 mugqic/samtools/1.9 mugqic/GenomeAnalysisTK/4.1.0.0 mugqic/R_Bioconductor/3.5.0_3.7 mugqic/Delly/0.7.8
+module load mugqic/java/openjdk-jdk1.8.0_72 mugqic/bvatools/1.6 mugqic/samtools/1.9 mugqic/GenomeAnalysisTK/4.1.0.0 mugqic/R_Bioconductor/3.5.0_3.7 mugqic/bcftools/1.6 mugqic/Delly/0.7.8
 
 ```
 
