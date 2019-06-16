@@ -375,6 +375,8 @@ Merge all re-genotyped samples to get a single VCF/BCF using bcftools merge. Als
 bcftools merge -O b -o SVvariants/merged.bcf SVvariants/NA12878.geno.bcf SVvariants/NA12891.geno.bcf SVvariants/NA12892.geno.bcf
 bcftools index SVvariants/merged.bcf
 bcftools view SVvariants/merged.bcf > SVvariants/merged.vcf
+bgzip -c SVvariants/merged.vcf > SVvariants/merged.vcf.gz
+tabix -fp vcf SVvariants/merged.vcf.gz
 ```
 
 
