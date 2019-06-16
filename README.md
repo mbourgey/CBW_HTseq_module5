@@ -98,7 +98,7 @@ cd $WORK_DIR_M5
 ln -s $HOME/CourseData/HT_data/Module5/* .
 
 
-module load mugqic/java/openjdk-jdk1.8.0_72 mugqic/bvatools/1.6 mugqic/samtools/1.9 mugqic/GenomeAnalysisTK/4.1.0.0 mugqic/R_Bioconductor/3.5.0_3.7 mugqic/bcftools/1.6 mugqic/Delly/0.7.8
+module load mugqic/java/openjdk-jdk1.8.0_72 mugqic/bvatools/1.6 mugqic/samtools/1.9 mugqic/GenomeAnalysisTK/4.1.0.0 mugqic/R_Bioconductor/3.5.0_3.7 mugqic/bcftools/1.6 mugqic/tabix/0.2.6 mugqic/Delly/0.7.8
 
 ```
 
