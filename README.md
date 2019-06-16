@@ -299,13 +299,13 @@ Let's call SVs:
 
 ```
 #NA12878
-delly call -g reference/hg19.fa -o SVvariants/NA12878.bcf -x reference/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
+#delly call -g reference/hg19.fa -o SVvariants/NA12878.bcf -x reference/hg19.excl bam/NA12878/NA12878_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12891
-delly call -g reference/hg19.fa -o SVvariants/NA12891.bcf -x reference/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
+#delly call -g reference/hg19.fa -o SVvariants/NA12891.bcf -x reference/hg19.excl bam/NA12891/NA12891_S1.chr20.20X.pairs.posSorted.bam
 
 #NA12892
-delly call -g reference/hg19.fa -o SVvariants/NA12892.bcf -x reference/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
+#delly call -g reference/hg19.fa -o SVvariants/NA12892.bcf -x reference/hg19.excl bam/NA12892/NA12892_S1.chr20.20X.pairs.posSorted.bam
 ```
 
 
