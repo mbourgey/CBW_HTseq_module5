@@ -390,7 +390,8 @@ tabix -fp vcf SVvariants/merged.vcf.gz
 Launch IGV and load the merged calls and the germline calls using `File -> Load from URL` using:
 
 
- * http://XX.oicrcbw.ca/HTseq/Module5/SVvariants/merged.vcf
+ * http://XX.oicrcbw.ca/HTseq/Module5/SVvariants/merged.vcf.gz
+ * http://XX.oicrcbw.ca/HTseq/Module5/SVvariants/merged.vcf.gz.tbi
 
 
 ***Note:*** Once again you will need to replace `XX` by your student number.
