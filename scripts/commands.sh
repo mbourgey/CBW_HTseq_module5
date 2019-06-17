@@ -85,6 +85,6 @@ bcftools merge -O b -o SVvariants/merged.bcf SVvariants/NA12878.geno.bcf SVvaria
 bcftools index SVvariants/merged.bcf
 bcftools view SVvariants/merged.bcf > SVvariants/merged.vcf
 bgzip -c SVvariants/merged.vcf > SVvariants/merged.vcf.gz
-tabix -fp vcf SVvariants/merged.vcf.gz
+tabix -p vcf SVvariants/merged.vcf.gz
 
 
