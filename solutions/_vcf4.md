@@ -7,9 +7,8 @@ for i in SVvariants/*bcf ; do \
 done
 ```
 
-|Sample|Deletion|Duplication
+|Sample|Deletion|Duplication|Inversion|
 |--|--|--|--|
 |NA12878|92|15|16|
-|NA12878|153|15|16|
 |NA12891|134|12|9|
 |NA12892|113|11|8|
