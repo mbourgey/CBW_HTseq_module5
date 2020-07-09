@@ -1,15 +1,17 @@
 You can estimate the raw number of variant in each sample using the following command:
 
-```
-for i in SVvariants/*bcf ; do \
- echo $i ; \
- bcftools view $i | grep -v "^#" | wc -l  ;  \
-done
+```bash
+for bcf in SVvariants/*.bcf ; do
+ basename $bcf .bcf
+ bcftools view --no-header $i | grep -v "^#" | wc -l
+done | paste - -
 ```
 
 You should get:
 
-|NA12878|NA12891|NA12892|
-|--|--|--|
-|123|155|132|
+|Sample|Count|
+|--|--|
+|NA12878|123|
+|NA12891|155|
+|NA12892|132|
 
